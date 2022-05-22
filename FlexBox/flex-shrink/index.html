@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Shrink</title>
+    <style>
+        .flex-container {
+            display: flex;
+            border: 2px solid black;
+            max-width: 350px;
+        }
+
+        .item {
+            background-color: lightgreen;
+            font-size: 24px;
+            text-align: center;
+            margin: 5px;
+            color: white;
+        }
+
+        .shrink {
+            flex-shrink: 1;
+        }
+
+        .shrink-0 {
+            flex-shrink: 0;
+        }
+
+        .shrink-2 {
+            flex-shrink: 2;
+            flex-basis: 100px;
+        }
+
+        .shrink-3 {
+            flex-shrink: 3;
+            flex-basis: 100px;
+
+        }
+
+        .fg-1 {
+            flex-grow: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <p>Flex-Shrink 1</p>
+    <div class="flex-container">
+        <div class="item shrink fg-1">A</div>
+        <div class="item shrink fg-1">B</div>
+        <div class="item shrink fg-1">C</div>
+        <div class="item shrink fg-1">D</div>
+        <div class="item shrink fg-1">E</div>
+    </div>
+
+    <p>Flex-Shrink 1</p>
+    <div class="flex-container">
+        <div class="item shrink fg-1">A</div>
+        <div class="item shrink fg-1">B</div>
+        <div class="item shrink fg-1">Lorem ipsum dolor sit amet </div>
+        <div class="item shrink fg-1">D</div>
+        <div class="item shrink fg-1">E</div>
+    </div>
+
+    <p>Flex-Shrink 0 + basis</p>
+    <div class="flex-container">
+        <div class="item shrink-0 fg-1">A</div>
+        <div class="item shrink-0 fg-1">B</div>
+        <div class="item shrink-0 fg-1">Lorem ipsum dolor</div>
+        <div class="item shrink-0 fg-1">D</div>
+        <div class="item shrink-0 fg-1">E</div>
+    </div>
+
+    <p>Flex-Shrink mix + basis</p>
+    <div class="flex-container">
+        <div class="item shrink-1 fg-1">A</div>
+        <div class="item shrink-2 fg-1">B</div>
+        <div class="item shrink-2 fg-1">Lorem ipsum dolor</div>
+        <div class="item shrink-3 fg-1">D</div>
+    </div>
+    
+</body>
+</html>
